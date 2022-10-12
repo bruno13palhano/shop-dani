@@ -15,4 +15,21 @@ export class ProductService {
   getProductById(productId: number): Observable<Product> {
     return this.http.get<Product>(productUrl+productId)
   }
+
+  getProductsOrderByNameAsc(startAt: number, productsPerQuery: number): Observable<Product[]> {
+    return this.http.get<Product[]>(productUrl+'name-asc/?params='+startAt+','+productsPerQuery);
+  }
+
+  getProductsOrderByNameDesc(startAt: number, productsPerQuery: number): Observable<Product[]> {
+    return this.http.get<Product[]>(productUrl+'name-desc/?params='+startAt+','+productsPerQuery);
+  }
+
+  getProductsOrderByPriceAsc(startAt: number, productsPerQuery: number): Observable<Product[]> {
+    return this.http.get<Product[]>(productUrl+'price-asc/?params='+startAt+','+productsPerQuery);
+  }
+
+  getProductsOrderByPriceDesc(startAt: number, productsPerQuery: number): Observable<Product[]> {
+    return this.http.get<Product[]>(productUrl+'price-desc/?params='+startAt+','+productsPerQuery);
+  }
+
 }
