@@ -3,7 +3,7 @@ import { Product } from './model/product';
 import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const productUrl = 'http://localhost:8080/product';
+const productUrl = 'http://localhost:8080/product/';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,14 @@ export class ProductService {
 
   getProductById(productId: number): Observable<Product> {
     return this.http.get<Product>(productUrl+productId)
+  }
+
+  getProductsOrderByIdAsc(startAt: number, productsPerQuery: number): Observable<Product[]> {
+    return this.http.get<Product[]>(productUrl+'id-asc/?params='+startAt+','+productsPerQuery);
+  }
+
+  getProductsOrderByIdDesc(startAt: number, productsPerQuery: number): Observable<Product[]> {
+    return this.http.get<Product[]>(productUrl+'id-desc/?params='+startAt+','+productsPerQuery);
   }
 
   getProductsOrderByNameAsc(startAt: number, productsPerQuery: number): Observable<Product[]> {
