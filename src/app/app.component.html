@@ -1,1 +1,13 @@
+<app-main-menu></app-main-menu>
+
 <span>{{title}}</span>
+
+<div class="product-container">
+    <div *ngFor="let product of products">
+        <span>
+            {{product.productName}}
+        </span>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
