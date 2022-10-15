@@ -1,1 +1,31 @@
-<p>main-menu works!</p>
+<p> 
+    <mat-toolbar class="menu-container">   
+        <!-- <button mat-icon-button  [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+        </button> -->
+
+        <img (click)="goHome()" width="81.61px" height="68.8px" id="shop_logo" [src]="'assets/images/logo-121x102.png'">
+        <h2 id="shop_title">SHOP DANI</h2>
+        <!-- <mat-menu #menu="matMenu">
+            <button (click)="f1()" mat-menu-item>Item 1</button>
+            <button [routerLink]="'/'" mat-menu-item>Item 2</button>
+        </mat-menu> -->
+
+        <div class="menu-item">
+            
+            <div class="menu-items">
+                <button mat-button (click)="goHome()">INÍCIO</button>
+                <button mat-button (click)="goCategories()">CATEGORIAS</button>
+                <button mat-button>BLOG</button>
+                <mat-form-field >
+                    <span matPrefix></span>
+                    <input type="tel" matInput>
+                    <button matSuffix mat-button>
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>  
+        </div>
+        
+    </mat-toolbar>
+</p>
