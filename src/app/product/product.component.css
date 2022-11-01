@@ -4,15 +4,16 @@
 
 .product-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr 1fr; */
     padding: 20px;
 }
 
 .product-item {
+    margin: 20px;
     display: grid;
-    grid-template-rows: 3fr 1fr 1fr 2fr 1fr;
+    grid-template-rows: 3fr 1fr 1fr 1fr;
     /* width: 300px; */
-    height: 400px;
+    height: 300px;
     /* justify-content: center; */
     align-items: center;
     justify-items: center;

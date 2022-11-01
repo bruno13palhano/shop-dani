@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../model/product';
 import { ProductService } from '../product.service';
@@ -10,21 +10,30 @@ import { ProductService } from '../product.service';
 })
 export class ProductComponent implements OnInit {
 
-  products?: Product[];
+  // products?: Product[];
+  
+  @Input() product?: Product;
 
-  constructor(private productService: ProductService,
+  constructor(/*private productService: ProductService,*/
               private router: Router) { }
 
   ngOnInit(): void {
-    this.getProductsOrderById(0, 3);
+    // this.getProductsOrderByIdAsc(0, 10);
   }
 
-  getProductsOrderById(startAt: number, productsPerQuery: number) {
-    this.productService.getProductsOrderByIdDesc(startAt, productsPerQuery).
-      subscribe(products => {
-        this.products = products
-      });
-  }
+  // getProductsOrderByIdAsc(startAt: number, productsPerQuery: number) {
+  //   this.productService.getProductsOrderByIdAsc(startAt, productsPerQuery).
+  //     subscribe(products => {
+  //       this.products = products;
+  //     });
+  // }
+
+  // getProductsOrderByIdDesc(startAt: number, productsPerQuery: number) {
+  //   this.productService.getProductsOrderByIdDesc(startAt, productsPerQuery).
+  //     subscribe(products => {
+  //       this.products = products;
+  //     });
+  // }
 
   goToLink(link: string) {
     window.open(link, "");

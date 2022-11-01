@@ -1,10 +1,21 @@
-<div class="product-container">    
+<!-- <div class="product-container">    
     <div class="product-item" *ngFor="let product of products">
         <img width="200px" height="200px" [src]="product.productImageUrl">
         <p>productName: {{product.productName}}</p>
         <p>productPrice: R${{product.productPrice}}</p>
         <p>productDescripton: {{product.productDescription}}</p>
         <div (click)="goToLink(product.productLink)"> 
+            <button mat-button id="button_buy">Compre agora</button>
+        </div>
+    </div>
+</div> -->
+
+<div class="product-container">
+    <div class="product-item">        
+        <img width="150px" height="150px" [src]="product?.productImageUrl">
+        <p>{{product?.productName}}</p>
+        <p>R${{product?.productPrice}}</p>
+        <div (click)="goToLink(product?.productLink!)">
             <button mat-button id="button_buy">Compre agora</button>
         </div>
     </div>
