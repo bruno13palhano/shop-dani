@@ -1,0 +1,64 @@
+<div class="carousel">
+    
+    <button class="control prev" (click)="onPreviousClick()" (mouseenter)="stopSlides()" (mouseleave)="startSlides()">
+        <span class="arrow left"></span>
+    </button>
+
+    <ng-container *ngFor="let product of products; let i = index" class="slide-container">
+        
+        <div class="slide1 slide">
+            <img 
+                *ngIf="i === currentSlide"
+                [src]="product.productImageUrl" 
+                class="img-slide1"
+                [routerLink]="['/detail']" [state]="products![i]"
+                (mouseenter)="stopSlides()" (mouseleave)="startSlides()"
+                @carouselAnimation
+            >
+            <p @carouselAnimation *ngIf="i === currentSlide" class="product-title title-slide1">{{products![i].productName}}</p>
+            
+            <div *ngIf="i === currentSlide" class="slide-price">
+                <img @carouselAnimation class="tag-price" [src]="'./assets/images/price.png'">
+                <p @carouselAnimation class="title-price">{{products![i].productPrice}}R$</p> 
+            </div>
+        </div>
+        
+        <div class="slide2 slide" @carouselAnimation>
+            <img
+                *ngIf="i === nextSlide"
+                [src]="products![i].productImageUrl"
+                class="img-slide2"    
+                [routerLink]="['/detail']" [state]="products![i]"
+                (mouseenter)="stopSlides()" (mouseleave)="startSlides()"
+                @carouselAnimation
+            >
+            <p @carouselAnimation *ngIf="i === nextSlide" class="product-title title-slide2">{{products![i].productName}}</p>
+
+            <div *ngIf="i === nextSlide" class="slide-price">
+                <img @carouselAnimation class="tag-price" [src]="'./assets/images/price.png'">
+                <p @carouselAnimation class="title-price">{{products![i].productPrice}}R$</p> 
+            </div>
+        </div>
+        
+        <div class="slide3 slide">
+            <img
+                *ngIf="i === lastSlide"
+                [src]="products![i].productImageUrl"
+                class="img-slide3"
+                [routerLink]="['/detail']" [state]="products![i]"
+                (mouseenter)="stopSlides()" (mouseleave)="startSlides()"
+                @carouselAnimation
+            >
+            <p @carouselAnimation *ngIf="i === lastSlide" class="product-title title-slide3">{{products![i].productName}}</p>
+            
+            <div *ngIf="i === lastSlide" class="slide-price">
+                <img @carouselAnimation class="tag-price" [src]="'./assets/images/price.png'">
+                <p @carouselAnimation class="title-price">{{products![i].productPrice}}R$</p> 
+            </div>
+        </div>
+    </ng-container>
+
+    <button class="control next" (click)="onNextClick()" (mouseenter)="stopSlides()" (mouseleave)="startSlides()">
+        <span class="arrow right"></span>
+    </button>
+</div>

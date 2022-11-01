@@ -1,0 +1,165 @@
+img {
+    height: 200px;
+    width: auto;
+}
+
+.slide:hover {
+    transform: scale(1.025);
+}
+
+.carousel {
+    width: 100%;
+    height: 460px;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
+    grid-template-areas: "a b c d e";
+}
+
+.slide1 {
+    width: auto;
+    height: 300px;
+    position: relative;
+    align-self: center; 
+    justify-self: center;
+    grid-area: b;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-areas: "1a"
+                         "1b";
+}
+
+.slide1:hover {
+    cursor: pointer;
+}
+
+.img-slide1 {
+    grid-area: 1a;
+    justify-self: center;
+}
+
+.title-slide1 {
+    grid-area: 1b;
+    justify-self: center;
+    font-size: 16px;
+}
+
+.slide2 {
+    width: auto;
+    height: 300px;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    grid-area: c;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-areas: "2a"
+                         "2b";
+}
+
+.slide2:hover {
+    cursor: pointer;
+}
+
+.img-slide2 {
+    grid-area: 2a;
+    justify-self: center;
+}
+
+.title-slide2 {
+    grid-area: 2b;
+    justify-self: center;
+    font-size: 16px;
+}
+
+.slide3 {
+    width: auto;
+    height: 300px;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    grid-area: d;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-areas: "3a"
+                         "3b";
+}
+
+.slide3:hover {
+    cursor: pointer;
+}
+
+.img-slide3 {
+    grid-area: 3a;
+    justify-self: center;
+}
+
+.title-slide3 {
+    grid-area: 3b;
+    justify-self: center;
+    font-size: 16px;
+}
+
+.control {
+    border: none;
+    background-color: transparent;
+    outline: 0;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5em;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    user-select: none;
+    height: 80px;
+    opacity: 80%;
+    transition: opacity 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+    top: 0;
+    align-self: center;
+}
+
+.control:hover, focus {
+    opacity: 1;
+}
+
+.next {
+    justify-self: flex-end;
+    grid-area: e;
+}
+
+.prev {
+    justify-self: flex-start;
+    grid-area: a; 
+}
+
+.arrow {
+    display: block;
+    border-left: 0.1em solid black;
+    border-bottom: 0.1em solid black;
+    width: 0.5em;
+    height: 0.5em;
+}
+
+.left {
+    transform: rotate(45deg);
+}
+
+.right {
+    transform: rotate(225deg);
+}
+
+.tag-price {
+    height: 30px;
+    width: 30px;
+    justify-self: flex-end;
+}
+
+.slide-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
