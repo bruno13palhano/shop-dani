@@ -14,26 +14,11 @@ export class ProductComponent implements OnInit {
   
   @Input() product?: Product;
 
-  constructor(/*private productService: ProductService,*/
-              private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    // this.getProductsOrderByIdAsc(0, 10);
+    
   }
-
-  // getProductsOrderByIdAsc(startAt: number, productsPerQuery: number) {
-  //   this.productService.getProductsOrderByIdAsc(startAt, productsPerQuery).
-  //     subscribe(products => {
-  //       this.products = products;
-  //     });
-  // }
-
-  // getProductsOrderByIdDesc(startAt: number, productsPerQuery: number) {
-  //   this.productService.getProductsOrderByIdDesc(startAt, productsPerQuery).
-  //     subscribe(products => {
-  //       this.products = products;
-  //     });
-  // }
 
   goToLink(link: string) {
     window.open(link, "");
