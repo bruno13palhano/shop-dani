@@ -1,1 +1,13 @@
-<p>Product Detail works</p>
+<div class="detail-container">
+    <div class="detail-item">
+        <!-- <p class="item-id">{{product?.productId}}</p> -->
+        <img class="item-img" width="400px" height="400px" [src]="product?.productImageUrl">
+        <h2 class="item-name">{{product?.productName}}</h2>
+        <div class="item-price">
+            <img [src]="'./assets/images/price.png'" id="price_tag">    
+            <h3>{{product?.productPrice}}R$</h3>
+        </div>
+        <h3 class="item-description">{{product?.productDescription}}</h3>
+        <button mat-button class="item-buy" (click)="goToLink(product!.productLink)">Comprar Agora</button>
+    </div>
+</div>

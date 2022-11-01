@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Product } from '../model/product';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor() { }
+  products?: Product[];
+  @Input() product?: Product;
 
-  ngOnInit(): void {
+  constructor(private productService: ProductService,
+              private location: Location) { 
   }
 
+  ngOnInit(): void {
+    this.getProductsOrderByIdDesc(0, 10);
+    this.product = this.location.getState() as Product;
+  }
+
+  getProductsOrderByIdDesc(startAt: number, productsPerQuery: number) {
+    this.productService.getProductsOrderByIdDesc(startAt, productsPerQuery)
+      .subscribe(products => this.products = products);
+  }
+
+  goToLink(link: string) {
+    window.open(link, "");
+  }
 }
