@@ -1,0 +1,40 @@
+.search-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    margin-top: 100px;
+}
+
+.search-item {
+    display: grid;
+    grid-template-areas: "a b"
+                         "a c"
+                         "a d";
+    margin: 6px;        
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 30px 0 rgba(0, 0, 0, 0.19);
+    width: 98%;             
+}
+
+.search-item:hover {
+    cursor: pointer;
+}
+
+.search-image {
+    width: 180px;
+    height: auto;
+    grid-area: a;
+    justify-self: center;
+}
+
+.search-name {
+    grid-area: b;
+}
+
+.search-price {
+    grid-area: c;
+}
+
+.search-description {
+    grid-area: d;
+}

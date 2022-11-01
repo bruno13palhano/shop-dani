@@ -1,0 +1,10 @@
+<div class="search-container">
+    <ng-container  *ngFor="let product of products; let i = index">
+        <div *ngIf="i < products!.length" class="search-item" routerLink="/detail" [state]="product">
+            <img class="search-image" [src]="product.productImageUrl">
+            <p class="search-name">{{product.productName}}</p>
+            <p class="search-price">{{product.productPrice}}</p>
+            <p class="search-description">{{product.productDescription}}</p>
+        </div>
+    </ng-container>
+</div>
