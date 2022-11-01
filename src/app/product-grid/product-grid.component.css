@@ -1,0 +1,55 @@
+.block-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.block-item {
+    width: 280px;
+    height: 350px;
+    margin: 10px 2px 10px 2px;
+    padding: 2px;
+    display: grid;
+    grid-template-areas: "a"
+                         "b"
+                         "c"
+                         "d";
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    justify-self: center;
+}
+
+.block-item:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 30px 0 rgba(0, 0, 0, 0.19);
+}
+
+img {
+    width: auto;
+    height: 160px;
+}
+
+.block-img {
+    grid-area: a;
+    justify-self: center;
+}
+
+.block-name {
+    grid-area: b;
+    justify-self: center;
+}
+
+.block-price {
+    grid-area: c;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.block-description {
+    grid-area: d;
+    justify-self: center;
+}
+
+#price_tag {
+    width: 30px;
+    height: 30px;
+}

@@ -1,0 +1,13 @@
+<div class="main-container">
+    <div class="block-container">
+        <div *ngFor="let product of products" class="block-item" routerLink="/detail" [state]="product">
+            <img [src]="product.productImageUrl" class="block-img">
+            <h3 class="block-name">{{product.productName}}</h3>
+            <div class="block-price">
+                <img [src]="'./assets/images/price.png'" id="price_tag">
+                <h3>{{product.productPrice}}R$</h3>
+            </div>
+            <p class="block-description">{{product.productDescription}}</p>
+        </div>
+    </div>
+</div>
