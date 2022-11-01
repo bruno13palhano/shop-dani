@@ -1,5 +1,5 @@
 import { state } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../model/product';
 import { ProductService } from '../product.service';
@@ -9,13 +9,17 @@ import { ProductService } from '../product.service';
   templateUrl: './main-menu.component.html',
   styleUrls: ['./main-menu.component.css']
 })
-export class MainMenuComponent implements OnInit {
+export class MainMenuComponent implements OnInit, OnDestroy {
 
   search: string = "";
   casaProducts?: Product[];
 
   constructor(private router: Router,
               private casaService: ProductService) { }
+  
+  ngOnDestroy(): void {
+    this.search = "";
+  }
 
   ngOnInit(): void {
   }
@@ -34,11 +38,8 @@ export class MainMenuComponent implements OnInit {
                             productDescription: 'carrinho de madeira',
                             productPrice: 34.5,
                             productImageUrl: '',
-                            productLink: '', }
-
-    // this.router.navigateByUrl('', {skipLocationChange: true } ).then(() => {
-    //   this.router.navigateByUrl('/detail', {state: product});
-    // });
+                            productLink: '', 
+                          }
   }
 
   doSearch(searchUrl: string) {
@@ -56,5 +57,7 @@ export class MainMenuComponent implements OnInit {
             });
           });
         });
+
+    this.search = "";
   }
 }
