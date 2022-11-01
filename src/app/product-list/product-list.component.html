@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="destaques-container">
+        <h2 class="title">Produtos mais Recentes</h2>
+        <app-product-carousel [products]="perfumes"></app-product-carousel>
+    </div>
+    <div class="grid-container">
+        
+        <h2 class="title">Produtos em Destaques</h2>   
+        <app-product-grid [products]="products"></app-product-grid>
+
+        <h2 class="title">Perfumes em Destaques</h2>
+        <app-product-grid [products]="perfumes"></app-product-grid>
+
+        <h2 class="title">Artigos para Casa</h2>
+        <app-product-grid [products]="casaProducts"></app-product-grid>
+
+        <h2 class="title">Artigos em Geral</h2>
+        <app-product-grid [products]="mixProducts"></app-product-grid>
+    </div>
+</div>
