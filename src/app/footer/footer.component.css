@@ -1,0 +1,85 @@
+.footer-container {
+    width: 100%;
+    margin-top: 300px;
+    height: 400px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "a"
+                         "b"
+                         "c"
+                         "d";
+    color: white;
+    padding: 0;
+}
+
+.title {
+    font-size: 50px;
+}
+
+.sub-title {
+    font-size: 16px;
+}
+
+.footer-a {
+    grid-area: a;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: grid;
+    grid-template-areas: "a1 a2";
+}
+
+.a-item1 {
+    justify-self: flex-start;
+    grid-area: a1;
+    color: black;
+}
+
+.a-item2 {
+    justify-self: flex-end;
+    grid-area: a2;
+}
+
+.footer-bottom {
+    height: 100px;
+    grid-area: c;
+    justify-self: center;
+    width: 100%;
+    background-color: #C54B8C;
+    text-align: center;
+}
+
+.fontawesomesvg {
+    width: 3em;
+    height: 3em;
+}
+
+.copyright {
+    grid-area: d;
+    justify-self: center;
+    font-size: 18px;
+    width: 100%;
+    background-color: #C54B8C;
+    height: 100%;
+    text-align: center;
+}
+
+.facebook:hover {
+    background-color: #0000ff;
+    color: white;
+}
+
+.instagram:hover {
+    background-color: #E1306C;
+    color: white;
+}
+
+.twitter:hover {
+    background-color: #00acee;
+    color: white;
+
+}
+
+.linkedIn:hover {
+    background-color: #0072b1;
+    color: white;
+}
