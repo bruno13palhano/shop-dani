@@ -1,1 +1,22 @@
-<p>products-categories works!</p>
+<div class="container">
+
+    <div class="cat-item">
+        <h2 class="title">Perfumes Masculinos</h2>
+        <app-product-carousel [products]="perfumes"></app-product-carousel>
+    </div>
+
+    <div class="cat-item">
+        <h2 class="title">Últimos produtos</h2>
+        <app-product-carousel [products]="products"></app-product-carousel>
+    </div>
+
+    <div class="cat-item">
+        <h2 class="title">Colônias Masculinas</h2>
+        <app-product-carousel [products]="perfumes"></app-product-carousel>
+    </div>
+
+    <div class="cat-item">
+        <h2 class="title">Artigos para Casa</h2>
+        <app-product-carousel [products]="casaProducts"></app-product-carousel>
+    </div>
+</div>

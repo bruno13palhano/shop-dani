@@ -1,0 +1,15 @@
+.title {
+    grid-row-end: 4;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 30px;
+    margin: 80px 0 0 0;
+    background-color: #FFDBE9;
+    color: white;
+}
+
+.cat-item {
+    margin: 20px 0 20px 0;
+    padding: 0;
+}
